@@ -9,6 +9,7 @@ public class IfConditions {
 		if (Marks >=33)
 		{
 			System.out.println("Student is PASS if he Has greater than or equal: "+ Marks + " Marks.");
+			System.out.println("Second Commit");
 		}
 		else
 		{
