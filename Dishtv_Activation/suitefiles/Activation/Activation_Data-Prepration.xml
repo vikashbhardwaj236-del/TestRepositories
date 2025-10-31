@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Activation">
+<parameter name="browser" value="chrome"></parameter>
+   <test name="Login" enabled="false" >
+    <classes>
+      <class name="in.dishtv.Activation.PhoenixLoginTest"/>
+    </classes>
+  </test>   
+   <test name="Phoenix_Installation" enabled="true">
+    <classes>
+           <class name="in.dishtv.Activation.Phoenix_Activation_Data_Test"/>
+    </classes>
+  </test>    
+  
+</suite> <!-- Suite -->

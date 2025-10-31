@@ -1,0 +1,79 @@
+package in.easypay.generictest;
+
+import org.testng.annotations.Test;
+import org.testng.Assert;
+import in.dishtv.library.BaseLibrary;
+import in.dishtv.library.PropertiesLib;
+import in.dishtv.library.WaitStatementsLib;
+import in.easypay.genericpages.easypayLoginLogoutPage;
+
+public class LoginLogouteasypaytest extends BaseLibrary {
+	
+	
+	easypayLoginLogoutPage loginpage;
+	String username = PropertiesLib.getPropertyValue("userideasypay");
+	String password = PropertiesLib.getPropertyValue("passwordeasypay");
+	
+
+	@Test(priority = 1, enabled = true)
+	public void easyPay_Valid_Login_0001() {
+
+		loginpage = new easypayLoginLogoutPage();
+		initializeApplication(PropertiesLib.getPropertyValue("urleasypay"));
+		Assert.assertTrue(loginpage.getSigninpage().isDisplayed());
+		loginpage.logineasypay(username, password);
+		Assert.assertTrue(loginpage.getLogout().isDisplayed());
+		WaitStatementsLib.sleep(3000);
+		
+	}
+
+	@Test(priority = 2, enabled = true)
+	public void easyPay_Logout_0002() {
+
+		loginpage = new easypayLoginLogoutPage();
+		loginpage.logouteasypay();
+		loginpage.ClickHereafterlogout();		
+		Assert.assertTrue(loginpage.getSigninpage().isDisplayed());
+	}
+
+	@Test(priority = 3, enabled = true)
+	public void easypaylogin_BlankValidation_0005() {
+
+		loginpage = new easypayLoginLogoutPage();
+		Assert.assertTrue(loginpage.getSigninpage().isDisplayed());
+		loginpage.easyloginBlankValidation(username, password);
+	}
+
+	@Test(priority = 4, enabled = true)
+	public void easypaylogin_UserName_BlankValidation_0006() {
+
+		loginpage = new easypayLoginLogoutPage();
+		Assert.assertTrue(loginpage.getSigninpage().isDisplayed());
+		loginpage.easyloginValidationonlyUserID(username, password);
+	}
+
+	@Test(priority = 5, enabled = true)
+	public void easypaylogin_Password_BlankValidation_0007() {
+
+		loginpage = new easypayLoginLogoutPage();
+		Assert.assertTrue(loginpage.getSigninpage().isDisplayed());
+		loginpage.EasyloginValidationonlyPassword(username, password);
+	}
+
+	@Test(priority = 6, enabled = true)
+	public void easyPay_Invalid_UserID_0004() {
+
+		loginpage = new easypayLoginLogoutPage();
+		Assert.assertTrue(loginpage.getSigninpage().isDisplayed());
+		loginpage.EasyloginInvalidUserID(username, password);
+	}
+
+	@Test(priority = 7, enabled = true)
+	public void easyPay_Invalid_Password_0003() {
+
+		loginpage = new easypayLoginLogoutPage();
+		Assert.assertTrue(loginpage.getSigninpage().isDisplayed());
+		loginpage.EasyloginInvalidPassword(username, password);
+	}
+
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [PhoenixLoginLogout]]">
+  <test thread-count="5" name="PhoenixLoginLogout-Test(failed)(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="in.dishtv.Phoenix.PhoenixLoginLogoutTest">
+        <methods>
+          <include name="phoenixLoginInValidUseridInvalidPassword"/>
+          <include name="phoenixLoginValidUseridValidPassword"/>
+          <include name="launchBrowser"/>
+          <include name="resultAnalysis"/>
+          <include name="sendamil"/>
+        </methods>
+      </class> <!-- in.dishtv.Phoenix.PhoenixLoginLogoutTest -->
+    </classes>
+  </test> <!-- PhoenixLoginLogout-Test(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [PhoenixLoginLogout]] -->

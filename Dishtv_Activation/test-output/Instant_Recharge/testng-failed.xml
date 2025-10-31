@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Instant_Recharge]">
+  <parameter name="browser" value="chrome"/>
+  <test name="Instant_Recharge(failed)">
+    <classes>
+      <class name="in.dishtv.Instant_Recharge_Test.Instant_Recharge_process_Test">
+        <methods>
+          <include name="Instant_Recharge_Validation"/>
+          <include name="launchBrowser"/>
+          <include name="resultAnalysis"/>
+          <include name="sendamil"/>
+        </methods>
+      </class> <!-- in.dishtv.Instant_Recharge_Test.Instant_Recharge_process_Test -->
+      <class name="in.dishtv.Activation.CRM_installation_Login_Test">
+        <methods>
+          <include name="resultAnalysis"/>
+        </methods>
+      </class> <!-- in.dishtv.Activation.CRM_installation_Login_Test -->
+    </classes>
+  </test> <!-- Instant_Recharge(failed) -->
+</suite> <!-- Failed suite [Instant_Recharge] -->

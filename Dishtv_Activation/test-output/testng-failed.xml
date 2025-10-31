@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Activation]">
+  <parameter name="browser" value="chrome"/>
+  <test name="Login(failed)">
+    <classes>
+      <class name="in.dishtv.Activation.Phoenix_Installation_Version_Test">
+        <methods>
+          <include name="launchBrowser"/>
+        </methods>
+      </class> <!-- in.dishtv.Activation.Phoenix_Installation_Version_Test -->
+      <class name="in.dishtv.Activation.PhoenixLoginTest">
+        <methods>
+          <include name="phoenixLoginValidUseridValidPassword"/>
+        </methods>
+      </class> <!-- in.dishtv.Activation.PhoenixLoginTest -->
+    </classes>
+  </test> <!-- Login(failed) -->
+  <test name="Phoenix_Installation(failed)">
+    <classes>
+      <class name="in.dishtv.Activation.Phoenix_Installation_Version_Test">
+        <methods>
+          <include name="Phoenix_Installation_Procss"/>
+          <include name="launchBrowser"/>
+        </methods>
+      </class> <!-- in.dishtv.Activation.Phoenix_Installation_Version_Test -->
+    </classes>
+  </test> <!-- Phoenix_Installation(failed) -->
+</suite> <!-- Failed suite [Activation] -->

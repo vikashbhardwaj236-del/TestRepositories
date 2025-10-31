@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [PhoenixLoginLogout]">
+  <parameter name="browser" value="chrome"/>
+  <listeners>
+    <listener class-name="in.dishtv.library.ExtentReportListener"/>
+  </listeners>
+  <test name="PhoenixTechnicianTrackTest(failed)">
+    <classes>
+      <class name="in.dishtv.Phoenix.NotClaimStockTest">
+        <methods>
+          <include name="resultAnalysis"/>
+        </methods>
+      </class> <!-- in.dishtv.Phoenix.NotClaimStockTest -->
+      <class name="in.dishtv.Phoenix.PhoenixTechnicianTrackTest">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="resultAnalysis"/>
+          <include name="ToverifyTechnicitrack"/>
+          <include name="sendamil"/>
+        </methods>
+      </class> <!-- in.dishtv.Phoenix.PhoenixTechnicianTrackTest -->
+      <class name="in.dishtv.Phoenix.PhoenixLoginLogoutTest">
+        <methods>
+          <include name="resultAnalysis"/>
+        </methods>
+      </class> <!-- in.dishtv.Phoenix.PhoenixLoginLogoutTest -->
+      <class name="in.dishtv.Phoenix.PhoenixServiceHeirarchyTest">
+        <methods>
+          <include name="resultAnalysis"/>
+        </methods>
+      </class> <!-- in.dishtv.Phoenix.PhoenixServiceHeirarchyTest -->
+    </classes>
+  </test> <!-- PhoenixTechnicianTrackTest(failed) -->
+</suite> <!-- Failed suite [PhoenixLoginLogout] -->

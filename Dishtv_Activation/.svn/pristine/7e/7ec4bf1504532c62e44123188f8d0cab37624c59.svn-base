@@ -1,0 +1,141 @@
+package in.dishtv.Website_dishtv;
+
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
+import org.openqa.selenium.By;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import in.dishtv.genericpages.BasePage;
+import in.dishtv.library.ApplicationUtilities;
+import in.dishtv.library.BaseLibrary;
+import in.dishtv.library.PropertiesLib;
+import in.dishtv.library.ValidLinkBrokenLink;
+import in.dishtv.library.WaitStatementsLib;
+
+public class Website_dishtvloginLogoutTest extends BaseLibrary {
+	Website_dishtvloginLogoutPage login;
+	BasePage base;
+	// ValidLinkBrokenLink appobj;
+	String userid = PropertiesLib.getPropertyValue("UseridWebsite");
+	String userpwd = PropertiesLib.getPropertyValue("UserpwdWebsite");
+	/*String userid = PropertiesLib.getPropertyValue("UseridWebsite_Live");
+	String userpwd = PropertiesLib.getPropertyValue("UserpwdWebsite_Pwd");*/
+	String websiteurl = PropertiesLib.getPropertyValue("urlwebsite");
+	String userid_Rmn = PropertiesLib.getPropertyValue("UseridWebsite_RMN");
+	String userpwd_Rmn = PropertiesLib.getPropertyValue("UseridWebsite_RMN_Pwd");
+	@Test(priority = 1, enabled = true)
+	public void Website_Click_on_SUBSCRIBER_CORNER_001() {
+		login = new Website_dishtvloginLogoutPage();
+		base = new BasePage();
+		initializeApplication(websiteurl);
+		// System.out.println(driver.getTitle());
+		// Assert.assertTrue(login.Click_on_SUBSCRIBER_CORNER());
+		Assert.assertTrue(login.Click_on_SUBSCRIBER_CORNER(), "Login");
+		//Assert.assertEquals(login.Click_on_SUBSCRIBER_CORNER(), "Website_Click_on_SUBSCRIBER_CORNER_001", "message");
+	}
+	@Test(priority = 2,enabled = true)
+	public void Website_To_Check_Title_002(){
+		login = new Website_dishtvloginLogoutPage();
+		// initializeApplication(websiteurl);
+		String Actual = login.Check_Title();
+		Assert.assertEquals(Actual, "DTH(Direct To Home) Service Provider India, HD/SD Set Top Box –DishTV");
+	}
+	
+	@Test(priority = 3,enabled = true)
+	public void Website_login_window_Open_003() {
+		login = new Website_dishtvloginLogoutPage();
+		// initializeApplication(websiteurl);
+		// login.Click_on_SUBSCRIBER_CORNER();
+		login.subscribercorner().click();
+		String actual = login.Login_details.getText();
+		Assert.assertEquals(actual, "Login Details");
+		ApplicationUtilities.closepopup(login.Login_popup_Crossbutton,driver);
+		
+
+	}
+	@Test(priority = 4, enabled= true)
+	public void Website_login_Feature_valid_Rmn_Valid_Pwd_004(){
+		login = new Website_dishtvloginLogoutPage();
+		//login.subscribercorner.click();
+		login.loginWebsite_dishtv(userid_Rmn, userpwd_Rmn);
+		String Actual = login.Check_Title();
+		Assert.assertEquals(Actual, "DishTV :: My Account");
+		login.logout().click();
+	}
+	@Test(priority = 5,enabled = true)
+	public void Website_login_Feature_valid_VC_Valid_Pwd_005(){
+		login.loginWebsite_dishtv(userid, userpwd);
+		String Actual = login.Check_Title();
+		Assert.assertEquals(Actual, "DishTV :: My Account");
+		
+	}
+	/*
+	 * @Test(enabled=true) public void WebsiteLoginValidUseridInValidPassword() {
+	 * login=new Website_dishtvloginLogoutPage(); base=new BasePage(); //appobj =
+	 * new ValidLinkBrokenLink(); initializeApplication(websiteurl);
+	 * //Assert.assertEquals(driver.getTitle(), "Dishtv Biz");
+	 * login.loginWebsite_dishtv(userid, " ");
+	 * //appobj.ValidLinkAndBrokenLink(driver);
+	 * WaitStatementsLib.pageLoadWait(driver, 180);
+	 * driver.findElement(By.xpath(".//*[@id='AnkSignInClose']/img")).click();
+	 * Assert.assertTrue(base.getWelcomeWebsiteHomepage().isDisplayed());
+	 * 
+	 * }
+	 */
+	// @Test(enabled=true)
+	// public void WebsiteLoginINValidUseridInValidPassword() {
+	// login=new Website_dishtvloginLogoutPage();
+	// base=new BasePage();
+	// initializeApplication(websiteurl);
+	// //Assert.assertEquals(driver.getTitle(), "Dishtv Biz");
+	// login.loginWebsite_dishtv("invalid", userpwd);
+	// WaitStatementsLib.pageLoadWait(driver, 180);
+	// Assert.assertTrue(base.getWelcomeWebsiteHomepage().isDisplayed());
+	// }
+	// @Test(enabled=true)
+	// public void WebsiteLoginINValidUseridValidPassword() {
+	// login=new Website_dishtvloginLogoutPage();
+	// base=new BasePage();
+	// initializeApplication(websiteurl);
+	// //Assert.assertEquals(driver.getTitle(), "Dishtv Biz");
+	// login.loginWebsite_dishtv("invalid", userpwd);
+	// WaitStatementsLib.pageLoadWait(driver, 180);
+	// Assert.assertTrue(base.getWelcomeWebsiteHomepage().isDisplayed());
+	// }
+	// @Test(enabled=true)
+	// public void WebsiteLoginBlankUseridBlankPassword() {
+	// login=new Website_dishtvloginLogoutPage();
+	// base=new BasePage();
+	// initializeApplication(websiteurl);
+	// //Assert.assertEquals(driver.getTitle(), "Dishtv Biz");
+	// login.loginWebsite_dishtv(" ", " ");
+	// WaitStatementsLib.pageLoadWait(driver, 180);
+	// Assert.assertTrue(base.getWelcomeWebsiteHomepage().isDisplayed());
+	// }
+	// @Test(enabled=true)
+	// public void WebsiteLoginValidUseridBlankPassword() {
+	// login=new Website_dishtvloginLogoutPage();
+	// base=new BasePage();
+	// initializeApplication(websiteurl);
+	// //Assert.assertEquals(driver.getTitle(), "Dishtv Biz");
+	// login.loginWebsite_dishtv(userid, " ");
+	// WaitStatementsLib.pageLoadWait(driver, 180);
+	// Assert.assertTrue(base.getWelcomeWebsiteHomepage().isDisplayed());
+	// }
+	// @Test(enabled=true)
+	// public void WebsiteLoginValidUseridValidPassword() throws
+	// InterruptedException {
+	// login=new Website_dishtvloginLogoutPage();
+	// base=new BasePage();
+	// initializeApplication(websiteurl);
+	// //Assert.assertEquals(driver.getTitle(), "Dishtv Biz");
+	// login.loginWebsite_dishtv(userid, userpwd);
+	// WaitStatementsLib.pageLoadWait(driver, 180);
+	// //Alert alert = driver.switchTo().alert();
+	// //alert.accept();
+	// Thread.sleep(5000);
+	// driver.findElement(By.id("onesignal-popover-cancel-button")).click();
+	// Assert.assertTrue(base.getWelcomeWebsiteHomepage().isDisplayed());
+	// }
+}

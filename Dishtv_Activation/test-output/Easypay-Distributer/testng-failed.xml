@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Easypay-Distributer]">
+  <parameter name="browser" value="chrome"/>
+  <test name="Easypay_Sap_Credit_BalanceTest(failed)">
+    <classes>
+      <class name="in.easypay.generictest.LoginLogouteasypaytest">
+        <methods>
+          <include name="resultAnalysis"/>
+        </methods>
+      </class> <!-- in.easypay.generictest.LoginLogouteasypaytest -->
+      <class name="in.easypay.generictest.Easypay_Distributor_LandingTest">
+        <methods>
+          <include name="resultAnalysis"/>
+        </methods>
+      </class> <!-- in.easypay.generictest.Easypay_Distributor_LandingTest -->
+      <class name="in.easypay.generictest.Easypay_Sap_Credit_BalanceTest">
+        <methods>
+          <include name="Easypay_Sap_Credit_BalancePageNavigation"/>
+          <include name="Easy_Distributor_validate"/>
+          <include name="launchBrowser"/>
+          <include name="resultAnalysis"/>
+          <include name="sendamil"/>
+        </methods>
+      </class> <!-- in.easypay.generictest.Easypay_Sap_Credit_BalanceTest -->
+      <class name="in.easypay.generictest.Easypay_TranactionApprovalTest">
+        <methods>
+          <include name="resultAnalysis"/>
+        </methods>
+      </class> <!-- in.easypay.generictest.Easypay_TranactionApprovalTest -->
+    </classes>
+  </test> <!-- Easypay_Sap_Credit_BalanceTest(failed) -->
+</suite> <!-- Failed suite [Easypay-Distributer] -->

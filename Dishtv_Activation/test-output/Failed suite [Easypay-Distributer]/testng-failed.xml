@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Easypay-Distributer]]">
+  <parameter name="browser" value="chrome"/>
+  <test thread-count="5" name="LoginLogouteasypay(failed)(failed)">
+    <classes>
+      <class name="in.easypay.generictest.LoginLogouteasypaytest">
+        <methods>
+          <include name="easyPay_Valid_Login_0001"/>
+          <include name="launchBrowser"/>
+          <include name="resultAnalysis"/>
+          <include name="sendamil"/>
+        </methods>
+      </class> <!-- in.easypay.generictest.LoginLogouteasypaytest -->
+    </classes>
+  </test> <!-- LoginLogouteasypay(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [Easypay-Distributer]] -->

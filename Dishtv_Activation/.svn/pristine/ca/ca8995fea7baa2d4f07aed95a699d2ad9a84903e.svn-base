@@ -1,0 +1,16 @@
+#--- For CRM
+urlcrm=http://10.95.21.15:8081/
+urlIB=http://10.95.21.15:8081/pages/customerservice/CustomerServiceMain.aspx
+usertypecrm=Corporate User
+useridcrm=1004533
+passwordcrm=azure@123
+pageloadtime=120
+#--- For Phoniex
+urlphoenix=http://10.95.21.14:6066/Login/Login
+usertypephoenix=Trade Partner
+useridphoenix=8094
+passwordphoenix=DISHtv@123
+#--- For Easypay
+urleasypay=http://10.95.21.14:8084/
+userideasypay=112237
+passwordeasypay=dish@123

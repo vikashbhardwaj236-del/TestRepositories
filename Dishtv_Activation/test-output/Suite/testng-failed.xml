@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <parameter name="browser" value="chrome"/>
+  <test thread-count="5" name="Website_dishtv(failed)">
+    <classes>
+      <class name="in.dishtv.Website_dishtv.Website_dishtvloginLogoutTest">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="resultAnalysis"/>
+          <include name="WebsiteLoginBlankUseridBlankPassword_006"/>
+          <include name="sendamil"/>
+        </methods>
+      </class> <!-- in.dishtv.Website_dishtv.Website_dishtvloginLogoutTest -->
+    </classes>
+  </test> <!-- Website_dishtv(failed) -->
+</suite> <!-- Failed suite [Suite] -->

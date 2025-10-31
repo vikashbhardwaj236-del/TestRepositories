@@ -1,0 +1,146 @@
+<html>
+<head>
+<title>TestNG:  VC_Process</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>VC_Process</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>5/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Jan 27 13:18:09 IST 2020</td>
+</tr>
+<tr><td>Total time:</td><td>208 seconds (208896 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='in.dishtv.IB_CRM.IB_CRMVCProcess_Test.IB_CRM_Page_Navigation()'><b>IB_CRM_Page_Navigation</b><br>Test class: in.dishtv.IB_CRM.IB_CRMVCProcess_Test<br/>
+<a href="#Output-210474732" onClick='toggleBox("Output-210474732", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-210474732" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-210474732">
+unknown error: Element <input type="image" src="../../Images/CustomerService/Blue arrow.ico" style="height: 20px; width: 20px; border: 0px" onclick="processVCRMN();" accesskey="G" alt="Process"> is not clickable at point (642, 18). Other element would receive the click: <div id="modalPopupExtenderError_backgroundElement" class="modalBackground" style="position: fixed; left: 0px; top: 0px; z-index: 10000; width: 1600px; height: 745px;"></div>
+  (Session info: chrome=79.0.3945.130)
+  (Driver info: chromedriver=2.44.609538 (b655c5a60b0b544917107a59d4153d4bf78e1b90),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 50 milliseconds
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:32:46'
+System info: host: 'IT-VivekK', ip: '192.168.163.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:61815}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.44.609538 (b655c5a60b0b544917107a59d4153d4bf78e1b90), userDataDir=C:\Users\vivek_k1\AppData\Local\Temp\scoped_dir18276_17948}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, version=79.0.3945.130, browserConnectionEnabled=false, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: df64c22185bb067f95143c3198f49960<br/>
+unknown error: Element <input type="image" src="../../Images/CustomerService/Blue arrow.ico" style="height: 20px; width: 20px; border: 0px" onclick="processVCRMN();" accesskey="G" alt="Process"> is not clickable at point (642, 18). Other element would receive the click: <div id="modalPopupExtenderError_backgroundElement" class="modalBackground" style="position: fixed; left: 0px; top: 0px; z-index: 10000; width: 1600px; height: 745px;"></div>
+  (Session info: chrome=79.0.3945.130)
+  (Driver info: chromedriver=2.44.609538 (b655c5a60b0b544917107a59d4153d4bf78e1b90),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 53 milliseconds
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:32:46'
+System info: host: 'IT-VivekK', ip: '192.168.163.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:61815}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.44.609538 (b655c5a60b0b544917107a59d4153d4bf78e1b90), userDataDir=C:\Users\vivek_k1\AppData\Local\Temp\scoped_dir18276_17948}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, version=79.0.3945.130, browserConnectionEnabled=false, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: df64c22185bb067f95143c3198f49960<br/>
+unknown error: Element <input type="image" src="../../Images/CustomerService/Blue arrow.ico" style="height: 20px; width: 20px; border: 0px" onclick="processVCRMN();" accesskey="G" alt="Process"> is not clickable at point (642, 18). Other element would receive the click: <div id="modalPopupExtenderError_backgroundElement" class="modalBackground" style="position: fixed; left: 0px; top: 0px; z-index: 10000; width: 1600px; height: 745px;"></div>
+  (Session info: chrome=79.0.3945.130)
+  (Driver info: chromedriver=2.44.609538 (b655c5a60b0b544917107a59d4153d4bf78e1b90),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 70 milliseconds
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:32:46'
+System info: host: 'IT-VivekK', ip: '192.168.163.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:61815}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.44.609538 (b655c5a60b0b544917107a59d4153d4bf78e1b90), userDataDir=C:\Users\vivek_k1\AppData\Local\Temp\scoped_dir18276_17948}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, version=79.0.3945.130, browserConnectionEnabled=false, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: df64c22185bb067f95143c3198f49960<br/>
+unknown error: Element <input type="image" src="../../Images/CustomerService/Blue arrow.ico" style="height: 20px; width: 20px; border: 0px" onclick="processVCRMN();" accesskey="G" alt="Process"> is not clickable at point (642, 18). Other element would receive the click: <div id="modalPopupExtenderError_backgroundElement" class="modalBackground" style="position: fixed; left: 0px; top: 0px; z-index: 10000; width: 1600px; height: 745px;"></div>
+  (Session info: chrome=79.0.3945.130)
+  (Driver info: chromedriver=2.44.609538 (b655c5a60b0b544917107a59d4153d4bf78e1b90),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 89 milliseconds
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:32:46'
+System info: host: 'IT-VivekK', ip: '192.168.163.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:61815}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.44.609538 (b655c5a60b0b544917107a59d4153d4bf78e1b90), userDataDir=C:\Users\vivek_k1\AppData\Local\Temp\scoped_dir18276_17948}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, version=79.0.3945.130, browserConnectionEnabled=false, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: df64c22185bb067f95143c3198f49960<br/>
+</div>
+</td>
+<td></td>
+<td>141</td>
+<td>in.dishtv.IB_CRM.IB_CRMVCProcess_Test@120f102b</td></tr>
+<tr>
+<td title='in.dishtv.IB_CRM.IB_CRMVCProcess_Test.Pack_Name()'><b>Pack_Name</b><br>Test class: in.dishtv.IB_CRM.IB_CRMVCProcess_Test</td>
+<td></td>
+<td>15</td>
+<td>in.dishtv.IB_CRM.IB_CRMVCProcess_Test@120f102b</td></tr>
+<tr>
+<td title='in.dishtv.IB_CRM.IB_CRMVCProcess_Test.Ren_amt()'><b>Ren_amt</b><br>Test class: in.dishtv.IB_CRM.IB_CRMVCProcess_Test</td>
+<td></td>
+<td>10</td>
+<td>in.dishtv.IB_CRM.IB_CRMVCProcess_Test@120f102b</td></tr>
+<tr>
+<td title='in.dishtv.IB_CRM.IB_CRMVCProcess_Test.SOA_Amount()'><b>SOA_Amount</b><br>Test class: in.dishtv.IB_CRM.IB_CRMVCProcess_Test</td>
+<td></td>
+<td>15</td>
+<td>in.dishtv.IB_CRM.IB_CRMVCProcess_Test@120f102b</td></tr>
+<tr>
+<td title='in.dishtv.IB_CRM.IB_CRMVCProcess_Test.Swich_off_date()'><b>Swich_off_date</b><br>Test class: in.dishtv.IB_CRM.IB_CRMVCProcess_Test</td>
+<td></td>
+<td>25</td>
+<td>in.dishtv.IB_CRM.IB_CRMVCProcess_Test@120f102b</td></tr>
+</table><p>
+</body>
+</html>

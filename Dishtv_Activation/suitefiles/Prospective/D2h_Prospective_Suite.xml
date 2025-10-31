@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Prospective">
+<parameter name="browser" value="chrome"></parameter>
+   <test name="Login" enabled="true" >
+    <classes>
+          <class name="in.dishtv.IB_CRM_D2h.IBloginlogout_test"/>
+    </classes>
+  </test>   
+   <test name="Phoenix_Installation" enabled="true">
+    <classes>
+          <class name="in.dishtv.Prospective.IB_Prospective_Token_D2h_Test"/>
+    </classes>
+  </test>    
+  
+</suite> <!-- Suite -->

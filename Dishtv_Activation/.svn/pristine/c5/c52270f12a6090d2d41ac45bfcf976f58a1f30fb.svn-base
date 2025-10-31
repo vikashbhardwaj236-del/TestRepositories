@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="easypay">
+	<parameter name="browser" value="chrome"></parameter>
+	<test name="LoginLogouteasypay">
+		<classes>
+			<class name="in.easypay.generictest.LoginLogouteasypaytest" />
+		</classes>
+	</test>
+	<test name="Dealer">
+		<classes>
+			<class name="in.easypay.generictest.Easyservicerechargetest" />
+		</classes>
+
+	</test>
+</suite> 

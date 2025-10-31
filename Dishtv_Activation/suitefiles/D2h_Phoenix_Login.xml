@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Activation">
+<parameter name="browser" value="chrome"></parameter>
+   <test thread-count="5" name="Login" enabled="true">
+   
+    <classes>
+      <class name="in.dishtv.Activation.D2h_PhoenixLoginTest"/>
+    </classes>
+  </test>   
+   <test name="Phoenix_Installation" enabled="false">
+    <classes>
+           <class name="in.dishtv.Activation.Phoenix_Installation_Version_Test"/>
+    </classes>
+  </test> 
+  
+   <test name="Phoenix_Installation_lOGOUT" enabled="false">
+    <classes>
+           <class name="in.dishtv.Activation.PhoenixLogoutTest"/>
+    </classes>
+  </test>
+  
+   <test name="Phoenix_Activation" enabled="false">
+    <classes>
+           <class name="in.dishtv.Activation.Phoenix_Activation_Test"/>
+    </classes>
+  </test>  
+  
+</suite> <!-- Suite -->

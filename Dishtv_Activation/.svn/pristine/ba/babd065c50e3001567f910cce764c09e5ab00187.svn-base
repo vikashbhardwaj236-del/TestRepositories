@@ -1,0 +1,19 @@
+package in.dishtv.Website_dishtv;
+
+import org.testng.annotations.Test;
+
+import in.dishtv.library.BaseLibrary;
+import in.dishtv.library.PropertiesLib;
+
+public class Website_dishtvInstantRechargeTest extends BaseLibrary {
+	Website_dishtvInstantRechargepage Rec_page;
+	String websiteurl = PropertiesLib.getPropertyValue("urlwebsite");
+	@Test(enabled = true)
+	public void InstantRechargewithvalidRMN() {
+		Rec_page = new Website_dishtvInstantRechargepage();
+		initializeApplication(websiteurl);
+		Rec_page.Instant_Recharge.click();
+	}
+	
+
+}

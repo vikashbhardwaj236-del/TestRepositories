@@ -1,0 +1,337 @@
+package in.dishtv.library;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.sound.midi.SysexMessage;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
+
+public class ApplicationUtilities {
+
+	static Select sel;
+	public static String StrDt;
+
+	// This method is used for select dropdown values using contains.
+	public static void dropdownTextContains(WebElement element, String text) {
+		try {
+			sel = new Select(element);
+			List<WebElement> ops = sel.getOptions();
+			for (WebElement webElement : ops) {
+				String txt = webElement.getText();
+				if (txt.contains(text)) {
+					sel.selectByVisibleText(txt);
+					break;
+				}
+			}
+		} catch (Exception e) {
+			System.out.println("Issue in drop down value selection");
+			e.printStackTrace();
+		}
+	}
+
+	public static void dropdownTextEqualIgnoreCase(WebElement element, String text) {
+		sel = new Select(element);
+		List<WebElement> ops = sel.getOptions();
+		for (WebElement webElement : ops) {
+			String txt = webElement.getText();
+			if (txt.equalsIgnoreCase(text)) {
+				sel.selectByVisibleText(txt);
+				break;
+			}
+		}
+	}
+	
+	public static void dropdownValue(WebElement element, String value) {
+		sel = new Select(element);
+		List<WebElement> ops = sel.getOptions();
+		for (WebElement webElement : ops) {
+			String val = webElement.getAttribute("value");
+			if (val.equalsIgnoreCase(value)) {
+				sel.selectByValue(val);
+				break;
+			}
+		}
+	}
+
+	
+	
+	public static void dropdownIndex(WebElement element, int index) {
+		try {
+			sel = new Select(element);
+			sel.selectByIndex(index);
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+	}
+
+	public static void click(WebElement element) {
+		element.click();
+	}
+
+	public static String[] split(String inputstring, String regex) {
+		return inputstring.split(regex);
+	}
+
+	public static String getTextandCloseAlert(WebDriver driver) {
+		try {
+			boolean acceptNextAlert = true;
+			try {
+				Alert alert = driver.switchTo().alert();
+				String alertText = alert.getText();
+				if (acceptNextAlert) {
+					alert.accept();
+				} else {
+					alert.dismiss();
+				}
+				return alertText;
+			} finally {
+				acceptNextAlert = true;
+			}
+		} catch (Exception e) {
+			System.out.println("Alert message clicked.");
+		}
+		return StrDt;
+	}
+	public static void Focuschange(WebDriver driver,String strfocusobject, int iwaittimemilisend) {
+		try {
+			driver.findElement(By.xpath(strfocusobject)).click();
+			Thread.sleep(iwaittimemilisend);
+
+		} catch (Exception e) {
+			System.out.println("Exception while focus change!" + e.getMessage());
+		}
+
+	}
+	public static boolean isAlertPresent(WebDriver driver) {
+		try {
+			driver.switchTo().alert();
+			return true;
+		} catch (NoAlertPresentException e) {
+			Reporter.log("No Alert Present.", true);
+			return false;
+		}
+	}
+
+	public static void acceptAlert(WebDriver driver) {
+		boolean bool = true;
+		bool = isAlertPresent(driver);
+		if (bool) {
+			driver.switchTo().alert().accept();
+		}
+	}
+	
+	public static String getAlertText(WebDriver driver) {
+		String alertText = "";
+		try {
+			Alert alert = driver.switchTo().alert();
+			alertText = alert.getText();
+			return alertText;
+		} catch (Exception ex) {
+			System.out.println(ex);
+			return alertText;
+		}
+		
+	}
+	// method used to get alert text and close for custom control
+	public static String getalerttextnclose(WebDriver driver)
+	{
+		String altext="";		 
+		try
+		{
+			altext=driver.findElement(By.xpath("//*[@id='lblMesg']")).getText();			
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//*[@id='Img1']")).click();
+			return altext;
+		}
+		catch(Exception ex)
+		{
+			System.out.println("Issue in get value from alert text.");
+		}
+		return altext;
+		
+		
+	}
+
+	/// method to highlight the click Area
+	public static void highLightElement(WebDriver driver, WebElement element) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].setAttribute('style', 'background: Green; border: 15px solid blue;');", element);
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+
+			System.out.println(e.getMessage());
+		}
+		js.executeScript("arguments[0].setAttribute('style','border: solid 2px white')", element);
+
+	}
+
+	// Common method to open new tab
+	public void Ntab(WebDriver driver) {
+		driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "t");
+
+	}
+
+	// Common method to quit from Driver
+	public void Fun_DriverQuit(WebDriver driver) {
+		try {
+			driver.quit();
+			driver = null;
+		} catch (Exception e) {
+			System.out.println("Exception on quit from Browser !");
+		}
+	}
+
+	public void switchToTab(WebDriver driver) {
+		// Switching between tabs using CTRL + tab keys.
+		try {
+			driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "\t");
+			// Switch to current selected tab's content.
+			driver.switchTo().defaultContent();
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			System.out.println("Exception in Switch tab.");
+		}
+
+	}
+
+	// Common method to Object identification
+	public boolean Fun_IsElementPresent(WebDriver driver, By by) {
+		try {
+			driver.findElement(by);
+			return true; // Success!
+		} catch (Exception ignored) {
+
+			System.out.println("Exception in Object Identification ! ");
+			return false;
+		}
+	}
+
+	// Common method to IB page in
+	public void openIB(WebDriver driver) {
+		try {
+			((JavascriptExecutor) driver).executeScript("window.open()");
+			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+			driver.switchTo().window(tabs.get(1));
+			String StrURLIB = PropertiesLib.getPropertyValue("urlIB");
+			driver.get(StrURLIB);					
+		} catch (Exception e) {
+			System.out.println("Exception in open IB page");
+			e.printStackTrace();
+		}
+
+	}
+
+	// Method for mouse-hover and click
+		public static void MouseHovernclick(WebDriver driver,String Strhoverobj, String Strobjclick) {
+			try {
+				WebElement element = driver.findElement(By.linkText(Strhoverobj));
+				Actions action = new Actions(driver);
+				action.moveToElement(element).build().perform();
+				Thread.sleep(4000);
+				driver.findElement(By.linkText(Strobjclick)).click();
+			} catch (Exception ex) {
+
+				System.out.println("Exception in mouse-hover");
+			}
+
+		}
+
+	// Method for Get numbers from String
+	public long getnumberfromstr(String strval) {
+		long tokenno = (long) Double.parseDouble(strval.replaceAll("[^0-9\\.]+", ""));
+		return tokenno;
+	}
+
+	/// Function for Remove space of given String
+	public static String Fun_RemoveSpace(String stringvalue) {
+		String withoutspaces = "";
+		char ch = 'a';
+		for (int i = 0; i < stringvalue.length(); i++) {
+			ch = stringvalue.charAt(i);
+			if (ch != 32)
+				withoutspaces += stringvalue.charAt(i);
+		}
+		return withoutspaces;
+	}
+
+	public void Scroll_Page_To_Bottom(WebDriver driver) {
+		try {
+			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		} catch (Exception ex) {
+			System.out.println("Exception scroll.");
+		}
+	}
+
+	public void Inner_scroll(WebDriver driver) {
+		try {
+
+			WebElement scrollArea = driver.findElement(By.xpath("//*[@id='pnlAlignmentTrouble']"));
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollTop = arguments[1];", scrollArea, 500);
+		} catch (Exception ex) {
+			System.out.println("Exception in inner scroll.");
+		}
+
+	}
+
+	// Method for Clear the all textbox
+	public static void CleartextCollection(WebDriver driver) {
+		try {
+			List<WebElement> links = driver.findElements(By.tagName("input"));
+			System.out.println(links.size());
+			for (int i = 0; i < links.size(); i++) {
+				if (links.get(i).isDisplayed() == true) {
+					links.get(i).clear();
+				}
+			}
+		} catch (Exception e) {
+			System.out.println("Exception in clear all text box.");
+			e.printStackTrace();
+		}
+	}
+
+	public static void DynamicWait(WebDriver driver, String StrXpath) {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, 120);
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(StrXpath)));
+		} catch (Exception e) {
+			System.out.println("Exception dynamic wait mathod.");
+		}
+	}
+
+	
+	// Method to get the number from string
+	public String getnoofstring(String strvalue, String strsign) {
+		String strfinal = "";
+		try {
+			strfinal = strvalue.substring(strvalue.lastIndexOf(strsign) + 1);
+			strfinal = strfinal.trim();
+			return strfinal;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return strfinal;
+		}
+	}
+	// Added by Santosh Bora - 22012019
+	public static void closepopup(WebElement element, WebDriver driver){
+		element.click();
+		
+		
+	}
+
+}

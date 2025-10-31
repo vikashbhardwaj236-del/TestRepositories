@@ -1,0 +1,35 @@
+package in.dishtv.Website_dishtv;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import in.dishtv.library.BaseLibrary;
+
+public class Website_dishtvInstantRechargepage extends BaseLibrary {
+	@FindBy(xpath = "//*[@id='ucHeader_DivTopHeader']/div[2]/div/ul/li[1]/a")
+	WebElement Instant_Recharge;
+	@FindBy(id = "MainContent_txtMobile")
+	WebElement RMN;
+	@FindBy(id = "MainContent_txtVCNo")
+	WebElement VCNO;
+	@FindBy(id = "MainContent_btnInstantRechageSubmit")
+	WebElement Submit;
+
+	public Website_dishtvInstantRechargepage() {
+		super();
+		PageFactory.initElements(driver, this);
+	}
+	public WebElement Instant_Recharge() {
+	return Instant_Recharge;
+	}
+	public WebElement RMN() {
+		return RMN;
+	}
+	public WebElement VCNO() {
+		return VCNO;
+	}
+	public WebElement submit() {
+		return Submit;
+	}
+}

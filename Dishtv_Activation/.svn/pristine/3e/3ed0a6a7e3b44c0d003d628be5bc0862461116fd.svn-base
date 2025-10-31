@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[Chrome browser has been launched successfully.]]>
+    </line>
+    <line>
+      <![CDATA[LOGINLOGOUT has been passed successfully.]]>
+    </line>
+    <line>
+      <![CDATA[Current browser instance has been closed.]]>
+    </line>
+  </reporter-output>
+  <suite name="LoginLogout" duration-ms="16985" started-at="2018-12-26T07:19:19Z" finished-at="2018-12-26T07:19:36Z">
+    <groups>
+    </groups>
+    <test name="LoginLogout-Test" duration-ms="16985" started-at="2018-12-26T07:19:19Z" finished-at="2018-12-26T07:19:36Z">
+      <class name="in.dishtv.generictest.LoginLogoutTest">
+        <test-method status="PASS" signature="launchBrowser(java.lang.String)[pri:0, instance:in.dishtv.generictest.LoginLogoutTest@f6c48ac]" name="launchBrowser" is-config="true" duration-ms="7494" started-at="2018-12-26T07:19:19Z" finished-at="2018-12-26T07:19:27Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Chrome browser has been launched successfully.]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method status="PASS" signature="loginLogout()[pri:0, instance:in.dishtv.generictest.LoginLogoutTest@f6c48ac]" name="loginLogout" duration-ms="8972" started-at="2018-12-26T07:19:27Z" finished-at="2018-12-26T07:19:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginLogout -->
+        <test-method status="PASS" signature="resultAnalysis(org.testng.ITestResult)[pri:0, instance:in.dishtv.generictest.LoginLogoutTest@f6c48ac]" name="resultAnalysis" is-config="true" duration-ms="398" started-at="2018-12-26T07:19:36Z" finished-at="2018-12-26T07:19:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginLogout status=SUCCESS method=LoginLogoutTest.loginLogout()[pri:0, instance:in.dishtv.generictest.LoginLogoutTest@f6c48ac] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[LOGINLOGOUT has been passed successfully.]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- resultAnalysis -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:in.dishtv.generictest.LoginLogoutTest@f6c48ac]" name="tearDown" is-config="true" duration-ms="1566" started-at="2018-12-26T07:19:36Z" finished-at="2018-12-26T07:19:38Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Current browser instance has been closed.]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- in.dishtv.generictest.LoginLogoutTest -->
+    </test> <!-- LoginLogout-Test -->
+  </suite> <!-- LoginLogout -->
+</testng-results>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [D2h_IB_Installation]">
+  <parameter name="browser" value="chrome"/>
+  <test name="Phoenix_Installation(failed)">
+    <classes>
+      <class name="in.dishtv.Activation.D2h_Installation_IB_Test">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="Phoenix_Installation_Procss"/>
+          <include name="resultAnalysis"/>
+          <include name="sendamil"/>
+        </methods>
+      </class> <!-- in.dishtv.Activation.D2h_Installation_IB_Test -->
+      <class name="in.dishtv.IB_CRM_D2h.IBloginlogout_test">
+        <methods>
+          <include name="resultAnalysis"/>
+        </methods>
+      </class> <!-- in.dishtv.IB_CRM_D2h.IBloginlogout_test -->
+    </classes>
+  </test> <!-- Phoenix_Installation(failed) -->
+</suite> <!-- Failed suite [D2h_IB_Installation] -->

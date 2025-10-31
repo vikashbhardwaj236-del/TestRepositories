@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Activation">
+<parameter name="browser" value="chrome"></parameter>
+   <test name="Login" >
+    <classes>
+      <class name="in.dishtv.Activation.PhoenixLoginTest"/>
+    </classes>
+  </test>   
+   <test name="Phoenix_Installation" enabled="true">
+    <classes>
+           <class name="in.dishtv.Activation.Phoenix_Installation_Version_Test"/>
+    </classes>
+  </test> 
+  
+   <test name="lOGOUT" enabled="false">
+    <classes>
+           <class name="in.dishtv.Activation.PhoenixLogoutTest"/>
+    </classes>
+  </test>
+  
+   <test name="Phoenix_Activation" enabled="false">
+    <classes>
+           <class name="in.dishtv.Activation.Phoenix_Activation_Test"/>
+    </classes>
+  </test>  
+  <test name="Phoenix_Activation_lOGOUT" enabled="false">
+    <classes>
+           <class name="in.dishtv.Activation.PhoenixLogoutTest"/>
+    </classes>
+  </test>  
+  <test name="IB" enabled="false">
+    <classes>
+          <class name="in.dishtv.IB_CRM_Dishtv.IBloginlogout_test"/>
+    </classes>
+  </test>  
+  <test name="VC_Process" enabled="false">
+    <classes>
+                 <class name="in.dishtv.IB_CRM_Dishtv.IB_CRMVCProcess_Test"/>
+    </classes>
+  </test> 
+  
+</suite> <!-- Suite -->

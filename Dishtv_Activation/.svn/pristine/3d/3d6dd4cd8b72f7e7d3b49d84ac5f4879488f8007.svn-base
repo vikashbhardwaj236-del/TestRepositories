@@ -1,0 +1,165 @@
+package in.easypay.genericpages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Reporter;
+import in.dishtv.library.ApplicationUtilities;
+import in.dishtv.library.BaseLibrary;
+import in.dishtv.library.PropertiesLib;
+
+public class easypayLoginLogoutPage extends BaseLibrary {
+	
+	public easypayLoginLogoutPage() {
+		super();
+		PageFactory.initElements(driver, this);
+		SheetName="TC-Login";
+	}
+
+	
+	// -- Login Xpath
+	@FindBy(xpath = "//*[@id='form1']/div[4]/div/div/h2")
+	private WebElement loginpageverify;
+	@FindBy(xpath = "//*[@id='CphPageMiddle_txtUserID']")
+	private WebElement loginuserid;
+	@FindBy(xpath = "//*[@id='CphPageMiddle_txtPassword']")
+	private WebElement loginpassword;
+	@FindBy(name = "ctl00$CphPageMiddle$ctl00")
+	private WebElement btnlogin;
+	@FindBy(xpath = "//*[@id='lblPageTitle']")
+	private WebElement Dashbaordpageverify;
+	// -- Logout Xpath
+	@FindBy(xpath = "//*[@id='RadMenu']/ul/li[7]/a/span")
+	private WebElement logout;
+	
+	@FindBy(linkText="Here")
+	private WebElement ClickHere;
+
+	public WebElement getLoginuserid() {
+		return loginuserid;
+	}
+	public WebElement ClickHereafterlogout()
+	{
+		return ClickHere; 
+	}
+	public WebElement getLoginpassword() {
+		return loginpassword;
+	}
+
+	public WebElement getBtnlogin() {
+		return btnlogin;
+	}
+
+	public WebElement getSigninpage() {
+		return loginpageverify;
+	}
+
+	public WebElement getLogout() {
+		return logout;
+	}
+
+	public void logineasypay(String username, String password) {
+		try {
+			loginuserid.clear();
+			loginpassword.clear();
+			loginuserid.sendKeys(username);
+			loginpassword.sendKeys(password);
+			ApplicationUtilities.click(btnlogin);
+		} catch (Exception ex) {
+			Reporter.log(ex.getLocalizedMessage(), true);
+		}
+	}
+
+	public void logouteasypay() {
+
+		if (getLogout().isDisplayed()) {
+			ApplicationUtilities.click(logout);
+
+		}
+
+	}
+
+	public void easyloginBlankValidation(String username, String password) {
+		try {
+			Thread.sleep(5000);
+			loginuserid.clear();
+			loginpassword.clear();
+			username = "";
+			password = "";
+			String Strmsg = "";
+			loginuserid.sendKeys(username);
+			loginpassword.sendKeys(password);
+			ApplicationUtilities.click(btnlogin);
+			Strmsg = ApplicationUtilities.getalerttextnclose(driver);
+			System.out.println(Strmsg);
+		} catch (Exception ex) {
+			Reporter.log(ex.getLocalizedMessage(), true);
+		}
+	}
+
+	public void easyloginValidationonlyUserID(String username, String password) {
+		try {
+			loginuserid.clear();
+			loginpassword.clear();
+			username = "";
+			String Strmsg = "";
+			loginuserid.sendKeys(username);
+			loginpassword.sendKeys(password);
+			ApplicationUtilities.click(btnlogin);
+			Strmsg = ApplicationUtilities.getalerttextnclose(driver);
+			System.out.println(Strmsg);
+		} catch (Exception ex) {
+			Reporter.log(ex.getLocalizedMessage(), true);
+		}
+	}
+
+	public void EasyloginValidationonlyPassword(String username, String password) {
+		try {
+			loginuserid.clear();
+			loginpassword.clear();
+			password = "";
+			String Strmsg = "";
+			loginuserid.clear();
+			loginuserid.sendKeys(username);
+			loginpassword.sendKeys(password);
+			ApplicationUtilities.click(btnlogin);
+			Strmsg = ApplicationUtilities.getalerttextnclose(driver);
+			System.out.println(Strmsg);
+		} catch (Exception ex) {
+			Reporter.log(ex.getLocalizedMessage(), true);
+		}
+	}
+
+	public void EasyloginInvalidUserID(String username, String password) {
+		try {
+			loginuserid.clear();
+			loginpassword.clear();
+			username = "585566";
+			String Strmsg = "";
+			loginuserid.sendKeys(username);
+			loginpassword.sendKeys(password);
+			ApplicationUtilities.click(btnlogin);
+			Strmsg = ApplicationUtilities.getalerttextnclose(driver);
+			System.out.println(Strmsg);
+		} catch (Exception ex) {
+			Reporter.log(ex.getLocalizedMessage(), true);
+		}
+	}
+
+	public void EasyloginInvalidPassword(String username, String password) {
+		try {
+			loginuserid.clear();
+			loginpassword.clear();
+			password = "abc123";
+			String Strmsg = "";
+			loginuserid.sendKeys(username);
+			loginpassword.sendKeys(password);
+			ApplicationUtilities.click(btnlogin);
+			Strmsg = ApplicationUtilities.getalerttextnclose(driver);
+			System.out.println(Strmsg);
+		} catch (Exception ex) {
+			Reporter.log(ex.getLocalizedMessage(), true);
+		}
+	}
+
+}

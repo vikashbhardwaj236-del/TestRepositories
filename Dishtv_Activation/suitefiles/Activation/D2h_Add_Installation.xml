@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="D2h_Add_Customer">
+<parameter name="browser" value="chrome"></parameter>
+  <test name="Login" >
+    <classes>
+      <class name="in.dishtv.Activation.PhoenixLoginTest"/>
+    </classes>
+  </test>   
+  
+   <test name="Installation" >
+    <classes>
+      <class name="in.dishtv.Activation.D2h_Installation_Version_Test"/>
+    </classes>
+  </test>     
+   
+</suite> <!-- Suite -->

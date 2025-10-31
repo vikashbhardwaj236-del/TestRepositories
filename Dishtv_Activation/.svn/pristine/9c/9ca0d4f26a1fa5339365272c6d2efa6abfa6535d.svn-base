@@ -1,0 +1,109 @@
+package in.easypay.genericpages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import in.dishtv.library.ApplicationUtilities;
+import in.dishtv.library.BaseLibrary;
+import in.dishtv.library.ExcelUtilities;
+import org.testng.Reporter;
+
+public class EasypayService_rechargePage extends BaseLibrary {
+	
+	String StrPathexl = System.getProperty("user.dir") + "//testdata//Dishtv-Easy-Pay.xlsx";
+	
+	ExcelUtilities xls = new ExcelUtilities(StrPathexl);
+	public EasypayService_rechargePage() {
+		super();
+		PageFactory.initElements(driver, this);
+
+	}
+
+	@FindBy(xpath = "//*[@id='lblPageTitle']")
+	private WebElement Pagetitle;
+	@FindBy(xpath = "//*[@id='CphPageMiddle_updDetails']/legend")
+	private WebElement Balancetile;
+	@FindBy(xpath = "//*[@id='CphPageMiddle_ddlMerchant']")
+	private WebElement MerchantDropdown;
+	@FindBy(xpath = "//*[@id='CphPageMiddle_ddlMerchantService']")
+	private WebElement MerchantServiceDropdown;
+	@FindBy(xpath = "//*[@id='CphPageMiddle_ddlPaymentType']")
+	private WebElement PaymentTypeDropdown;
+	@FindBy(xpath = "//*[@id='CphPageMiddle_ddlItemType']")
+	private WebElement ItemTypeDropdown;
+	@FindBy(xpath = "//*[@id='CphPageMiddle_txtComplaintNo']")
+	private WebElement ComplaintNotextbox;
+	@FindBy(xpath = "//*[@id='CphPageMiddle_txtMobileNo']")
+	private WebElement mobilenotextbox;
+	private String Strmobileno="mobilenotextbox";
+	@FindBy(xpath = "//*[@id='CphPageMiddle_txtAmount']")
+	private WebElement Amounttextbox;
+	
+	public WebElement getPagetitle() {
+		return Pagetitle;
+	}
+
+	public void navigation() {
+		try {
+			ApplicationUtilities.MouseHovernclick(driver, "Sales", "Service Recharge By Complaint No");
+		} catch (Exception ex) {
+			System.out.println("Easy pay Service Recharge By Complaint No page is not opening.");
+			Reporter.log(ex.getLocalizedMessage(), true);
+		}
+
+	}
+
+	public void EasypayServiceRechargepageverification() {
+		try {
+
+			getPagetitle();
+		} catch (Exception ex) {
+			System.out.println("Easy pay Service Recharge By Complaint No page is not opening.");
+			Reporter.log(ex.getLocalizedMessage(), true);
+		}
+	}
+
+	public void EasypayServiceRecharge() {
+		try {
+		
+			int rws = xls.getRowCount("Service_Recharge");
+			for (int i = 2; i <= rws; i++) {
+				if (xls.getCellData("Service_Recharge", 1, i).isEmpty()) {
+					break;
+				}
+				String strrun = xls.getCellData("Service_Recharge", 7, i);
+				if (strrun.toUpperCase().equalsIgnoreCase("YES")) {
+					
+					ApplicationUtilities.dropdownValue(MerchantDropdown, xls.getCellData("Service_Recharge", 1, i));
+					ApplicationUtilities.dropdownValue(MerchantServiceDropdown, xls.getCellData("Service_Recharge", 2, i));
+					ApplicationUtilities.dropdownValue(PaymentTypeDropdown, xls.getCellData("Service_Recharge", 3, i));
+					ApplicationUtilities.dropdownValue(ItemTypeDropdown, xls.getCellData("Service_Recharge", 4, i));
+					ComplaintNotextbox.sendKeys(xls.getCellData("Service_Recharge", 5, i));
+					ApplicationUtilities.Focuschange(driver, Strmobileno, 2000);
+					//ServiceTokenValidation(Strtoken);
+					
+				}
+			}
+
+		} catch (Exception ex) {
+			System.out.println("Issue in easy pay service recharge.");
+			Reporter.log(ex.getLocalizedMessage(), true);
+		}
+	}
+	
+	public void ServiceTokenValidation(String Strtoken)
+	{
+		try
+		{
+			
+			
+			
+		}
+		catch(Exception ex)
+		{
+			
+		}
+		
+	}
+
+}

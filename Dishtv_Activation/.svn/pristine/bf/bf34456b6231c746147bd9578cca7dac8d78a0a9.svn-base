@@ -1,0 +1,114 @@
+package in.dishtv.Website_dishtv;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
+
+import in.dishtv.genericpages.BasePage;
+import in.dishtv.library.ApplicationUtilities;
+
+public class Website_dishtvloginLogoutPage extends BasePage {
+	@FindBy(id = "ucHeader_divLogin")
+	WebElement subscribercorner;
+	@FindBy(id = "ucHeader_ucLogin_txtVCNumber")
+	WebElement SubscriberId;
+	@FindBy(id = "ucHeader_ucLogin_txtPassword")
+	WebElement SubscriberPwd;
+	@FindBy(id = "ucHeader_ucLogin_lnkLogin")
+	WebElement SubscriberSubmitButton;
+	@FindBy(xpath = "//div[@class = 'loginleft']/h2")
+	WebElement Login_details;
+	@FindBy(xpath = "//*[@id='AnkSignInClose']/img")
+	WebElement Login_popup_Crossbutton;
+	@FindBy(id = "onesignal-popover-cancel-button")
+	WebElement After_Login_pop;
+	@FindBy(xpath = ".//p[contains(text(), 'LOGOUT')]")
+	WebElement logout;
+	
+	
+
+	public Website_dishtvloginLogoutPage() {
+		super();
+		PageFactory.initElements(driver, this);
+	}
+
+	public WebElement subscribercorner() {
+		return subscribercorner;
+	}
+
+	public WebElement SubscriberId() {
+		return SubscriberId;
+	}
+
+	public WebElement SubscriberPwd() {
+		return SubscriberPwd;
+	}
+
+	public WebElement SubscriberSubmitButton() {
+		return SubscriberSubmitButton;
+	}
+
+	public WebElement Login_details() {
+		return Login_details;
+
+	}
+	public WebElement Login_pop_Crossbutton(){
+		return Login_popup_Crossbutton;	
+	}
+	public WebElement After_Login_pop(){
+		return After_Login_pop;
+	}
+	public WebElement logout() {
+		return logout;
+		
+	}
+
+	public void loginWebsite_dishtv(String userid, String userpwd) {
+		try {
+			subscribercorner.click();
+			SubscriberId.sendKeys(userid);
+			SubscriberPwd.sendKeys(userpwd);
+			ApplicationUtilities.click(SubscriberSubmitButton);
+			Thread.sleep(5000);
+			After_Login_pop.click();
+			//ApplicationUtilities.isAlertPresent(driver);
+			
+			
+		} catch (Exception ex) {
+			System.out.println("Unable to login Website_dishtv.");
+			Reporter.log(ex.getLocalizedMessage(), true);
+		
+		}
+	}
+
+	public boolean Click_on_SUBSCRIBER_CORNER() {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, 5);
+			wait.until(ExpectedConditions.elementToBeClickable(subscribercorner));
+			return true;
+
+		} catch (Exception ex) {
+			System.out.println("Unable to click on subscriber Corner menu in Website");
+			Reporter.log(ex.getLocalizedMessage(), true);
+			return false;
+		}
+
+	}
+
+	public String Check_Title() {
+		try {
+			String Title_text = driver.getTitle();
+			return Title_text;
+		} catch (Exception ex) {
+			System.out.println("Exception to get Check_Title value.");
+			Reporter.log(ex.getLocalizedMessage(), true);
+			return null;
+		}
+		
+
+	}
+
+}

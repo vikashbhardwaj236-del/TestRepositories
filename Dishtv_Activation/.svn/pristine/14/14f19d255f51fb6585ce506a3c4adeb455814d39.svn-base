@@ -1,0 +1,32 @@
+package in.easypay.generictest;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import in.dishtv.library.BaseLibrary;
+import in.easypay.genericpages.EasypayService_rechargePage;
+
+public class Easyservicerechargetest extends BaseLibrary {
+
+	EasypayService_rechargePage easypay;
+
+	@Test()
+	public void easyPayNavigation() {
+		easypay = new EasypayService_rechargePage();
+		easypay.navigation();
+
+	}
+
+	@Test()
+	public void easypayserviceRechargeVerify() {
+		easypay = new EasypayService_rechargePage();
+		Assert.assertTrue(easypay.getPagetitle().isDisplayed());
+	}
+	
+	@Test(priority = 1, enabled = true)
+	public void EasypayServiceRecharge() {
+		easypay = new EasypayService_rechargePage();
+		easypay.EasypayServiceRecharge();
+	}
+	
+
+}
